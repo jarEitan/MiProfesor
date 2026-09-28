@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
 /* =========================================
    VARIABLES Y PALETA MIP
 ========================================= */
@@ -20,13 +22,17 @@
     --borderInput: #CBD5E1;
     --shadowSoft: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
     --shadowHover: 0 20px 35px -10px rgba(0, 0, 0, 0.08), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+
+    --fontTitulos: 'Eras Bold ITC', 'Eras ITC', 'ITC Eras', sans-serif;
+    --fontImportante: 'Fredoka', sans-serif;
+    --fontParrafos: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
 }
 
 /* =========================================
    RESET Y ESTILOS GENERALES
 ========================================= */
 body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-family: var(--fontParrafos);
     background-color: var(--lightBackground);
     color: var(--darkNeutral);
     margin: 0;
@@ -39,6 +45,7 @@ main {
 }
 
 h1, h2, h3, h4 {
+    font-family: var(--fontImportante);
     color: var(--darkNeutral);
     letter-spacing: -0.03em;
 }
@@ -70,12 +77,12 @@ h1, h2, h3, h4 {
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid var(--borderLight);
-    padding: 0.85rem 0;
+    padding: 0.95rem 0;
 }
 
 .brandLogoCircle {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -94,7 +101,8 @@ h1, h2, h3, h4 {
 }
 
 .brandLogoTitle {
-    font-size: 1.35rem;
+    font-family: var(--fontTitulos);
+    font-size: 1.4rem;
     font-weight: 800;
     color: var(--darkNeutral);
 }
@@ -104,11 +112,12 @@ h1, h2, h3, h4 {
 }
 
 .navLinkItem {
+    font-family: var(--fontImportante);
     font-weight: 600;
     color: #475569;
     text-decoration: none;
-    padding: 0.4rem 0.8rem;
-    font-size: 0.95rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 1rem;
     transition: color 0.2s ease;
 }
 
@@ -119,13 +128,14 @@ h1, h2, h3, h4 {
 
 /* Botones del Header */
 .headerBtnOutline {
+    font-family: var(--fontImportante);
     border: 1.5px solid #94A3B8;
     background: transparent;
     color: var(--darkNeutral);
     font-weight: 700;
-    padding: 0.45rem 1.25rem;
+    padding: 0.55rem 1.4rem;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     text-decoration: none;
     transition: all 0.2s ease;
 }
@@ -136,12 +146,13 @@ h1, h2, h3, h4 {
 }
 
 .headerBtnPrimary {
+    font-family: var(--fontImportante);
     background-color: var(--primaryCoral);
     color: #FFFFFF;
     font-weight: 700;
-    padding: 0.45rem 1.25rem;
+    padding: 0.55rem 1.4rem;
     border-radius: 50px;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     text-decoration: none;
     box-shadow: 0 4px 12px rgba(255, 87, 87, 0.25);
     transition: all 0.2s ease;
@@ -159,27 +170,29 @@ h1, h2, h3, h4 {
 ========================================= */
 .heroSectionContainer {
     background: var(--heroBgGradient);
-    padding: 4.5rem 0 3.5rem 0;
+    padding: 4.8rem 0 3.8rem 0;
 }
 
 .communityBadge {
+    font-family: var(--fontImportante);
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     background-color: #D2F8F9;
     color: #007B80;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    padding: 0.4rem 1.1rem;
+    padding: 0.5rem 1.25rem;
     border-radius: 50px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.6rem;
 }
 
 .heroMainTitle {
-    font-size: 3.25rem;
+    font-family: var(--fontTitulos);
+    font-size: 3.4rem;
     font-weight: 900;
     line-height: 1.15;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.3rem;
 }
 
 .heroMainTitle .highlightCoral {
@@ -187,10 +200,11 @@ h1, h2, h3, h4 {
 }
 
 .heroSubTitle {
-    font-size: 1.1rem;
+    font-family: var(--fontParrafos);
+    font-size: 1.15rem;
     color: var(--textMuted);
-    max-width: 620px;
-    margin: 0 auto 2.5rem auto;
+    max-width: 720px;
+    margin: 0 auto 2.8rem auto;
     line-height: 1.6;
 }
 
@@ -199,9 +213,9 @@ h1, h2, h3, h4 {
     background-color: #FFFFFF;
     border: 1px solid var(--borderLight);
     border-radius: 50px;
-    padding: 0.5rem 0.6rem 0.5rem 1.2rem;
+    padding: 0.6rem 0.7rem 0.6rem 1.4rem;
     box-shadow: var(--shadowSoft);
-    max-width: 800px;
+    max-width: 950px;
     margin: 0 auto;
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
@@ -212,11 +226,12 @@ h1, h2, h3, h4 {
 
 /* Inputs con Borde Definido */
 .formInputField {
+    font-family: var(--fontParrafos);
     border: 1.5px solid var(--borderInput);
     background-color: #FFFFFF;
     border-radius: 50px;
-    padding: 0.65rem 1.2rem;
-    font-size: 0.92rem;
+    padding: 0.75rem 1.4rem;
+    font-size: 0.96rem;
     font-weight: 500;
     width: 100%;
     outline: none;
@@ -235,13 +250,14 @@ h1, h2, h3, h4 {
 
 /* Botón Buscar */
 .searchSubmitButton {
+    font-family: var(--fontImportante);
     background-color: var(--secondaryCyan);
     color: var(--darkNeutral);
     font-weight: 800;
     border: none;
     border-radius: 50px;
-    padding: 0.75rem 1.8rem;
-    font-size: 0.95rem;
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
     cursor: pointer;
     width: 100%;
     display: inline-flex;
@@ -259,16 +275,17 @@ h1, h2, h3, h4 {
 
 /* Búsquedas populares */
 .popularSearchText {
-    font-size: 0.85rem;
+    font-family: var(--fontParrafos);
+    font-size: 0.9rem;
     color: var(--textMuted);
-    margin-top: 1rem;
+    margin-top: 1.1rem;
 }
 
 .popularSearchText a {
     color: var(--textMuted);
     text-decoration: underline;
     font-weight: 600;
-    margin: 0 0.2rem;
+    margin: 0 0.3rem;
     transition: color 0.2s ease;
 }
 
@@ -283,7 +300,7 @@ h1, h2, h3, h4 {
     background-color: var(--cardBgSoft);
     border: 1px solid rgba(226, 232, 240, 0.8);
     border-radius: 20px;
-    padding: 2rem 1.75rem;
+    padding: 2.2rem 2rem;
     height: 100%;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -296,14 +313,14 @@ h1, h2, h3, h4 {
 }
 
 .featureIconBox {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
-    margin-bottom: 1.25rem;
+    font-size: 1.35rem;
+    margin-bottom: 1.35rem;
 }
 
 .iconBoxRed {
@@ -317,13 +334,15 @@ h1, h2, h3, h4 {
 }
 
 .featureCardTitle {
-    font-size: 1.2rem;
+    font-family: var(--fontImportante);
+    font-size: 1.25rem;
     font-weight: 800;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.7rem;
 }
 
 .featureCardText {
-    font-size: 0.92rem;
+    font-family: var(--fontParrafos);
+    font-size: 0.96rem;
     color: var(--textMuted);
     line-height: 1.55;
     margin-bottom: 0;
@@ -333,9 +352,10 @@ h1, h2, h3, h4 {
    4. PROFESORES RECOMENDADOS
 ========================================= */
 .viewAllCatalogLink {
+    font-family: var(--fontImportante);
     color: var(--primaryCoral);
     font-weight: 700;
-    font-size: 0.95rem;
+    font-size: 1rem;
     text-decoration: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
     display: inline-block;
@@ -350,7 +370,7 @@ h1, h2, h3, h4 {
     background-color: #FFFFFF;
     border: 1px solid var(--borderLight);
     border-radius: 20px;
-    padding: 1.5rem;
+    padding: 1.7rem;
     box-shadow: var(--shadowSoft);
     height: 100%;
     display: flex;
@@ -365,8 +385,8 @@ h1, h2, h3, h4 {
 }
 
 .teacherAvatarIcon {
-    width: 52px;
-    height: 52px;
+    width: 58px;
+    height: 58px;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -383,14 +403,15 @@ h1, h2, h3, h4 {
 }
 
 .teacherSubjectBadge {
+    font-family: var(--fontImportante);
     display: inline-block;
     background-color: #E6FAFA;
     color: #007B80;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 800;
-    padding: 0.25rem 0.75rem;
+    padding: 0.3rem 0.85rem;
     border-radius: 50px;
-    margin-top: 0.2rem;
+    margin-top: 0.3rem;
 }
 
 .teacherSubjectBadge.pink {
@@ -399,26 +420,29 @@ h1, h2, h3, h4 {
 }
 
 .teacherBioDescription {
-    font-size: 0.88rem;
+    font-family: var(--fontParrafos);
+    font-size: 0.92rem;
     color: var(--textMuted);
     line-height: 1.5;
-    margin: 1.2rem 0;
+    margin: 1.3rem 0;
 }
 
 .teacherLocationTag {
-    font-size: 0.82rem;
+    font-family: var(--fontParrafos);
+    font-size: 0.86rem;
     color: var(--textMuted);
     font-weight: 600;
 }
 
 .teacherContactButton {
+    font-family: var(--fontImportante);
     background-color: var(--primaryCoral);
     color: #FFFFFF;
     font-weight: 700;
     border: none;
     border-radius: 10px;
-    padding: 0.45rem 1.1rem;
-    font-size: 0.85rem;
+    padding: 0.55rem 1.25rem;
+    font-size: 0.9rem;
     text-decoration: none;
     transition: all 0.2s ease;
 }
@@ -436,7 +460,7 @@ h1, h2, h3, h4 {
     background: linear-gradient(135deg, #FF5757 0%, #E04848 100%);
     color: #FFFFFF;
     border-radius: 24px;
-    padding: 2.5rem 2rem;
+    padding: 2.75rem 2.2rem;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -449,7 +473,7 @@ h1, h2, h3, h4 {
     background-color: var(--darkCardBg);
     color: #FFFFFF;
     border-radius: 24px;
-    padding: 2.5rem 2rem;
+    padding: 2.75rem 2.2rem;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -463,9 +487,10 @@ h1, h2, h3, h4 {
 }
 
 .roleActionTitle {
-    font-size: 1.75rem;
+    font-family: var(--fontImportante);
+    font-size: 1.85rem;
     font-weight: 900;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.9rem;
     color: #FFFFFF;
 }
 
@@ -474,23 +499,25 @@ h1, h2, h3, h4 {
 }
 
 .roleActionText {
-    font-size: 0.95rem;
+    font-family: var(--fontParrafos);
+    font-size: 1rem;
     opacity: 0.9;
     line-height: 1.5;
-    margin-bottom: 2rem;
+    margin-bottom: 2.2rem;
 }
 
 .roleActionButtonWhite {
+    font-family: var(--fontImportante);
     background-color: #FFFFFF;
     color: var(--primaryCoral);
     font-weight: 800;
     border: none;
     border-radius: 50px;
-    padding: 0.7rem 1.6rem;
+    padding: 0.8rem 1.8rem;
     text-decoration: none;
     display: inline-block;
     align-self: flex-start;
-    font-size: 0.92rem;
+    font-size: 0.96rem;
     transition: all 0.2s ease;
 }
 
@@ -501,16 +528,17 @@ h1, h2, h3, h4 {
 }
 
 .roleActionButtonCyan {
+    font-family: var(--fontImportante);
     background-color: var(--secondaryCyan);
     color: var(--darkNeutral);
     font-weight: 800;
     border: none;
     border-radius: 50px;
-    padding: 0.7rem 1.6rem;
+    padding: 0.8rem 1.8rem;
     text-decoration: none;
     display: inline-block;
     align-self: flex-start;
-    font-size: 0.92rem;
+    font-size: 0.96rem;
     transition: all 0.2s ease;
 }
 
@@ -525,14 +553,15 @@ h1, h2, h3, h4 {
 .mainSiteFooter {
     background-color: var(--darkNeutral);
     color: #FFFFFF;
-    padding: 4rem 0 2rem 0;
-    margin-top: 4rem;
+    padding: 4.5rem 0 2.5rem 0;
+    margin-top: 4.5rem;
 }
 
 .footerColumnTitle {
-    font-size: 1rem;
+    font-family: var(--fontImportante);
+    font-size: 1.05rem;
     font-weight: 800;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.3rem;
     color: #FFFFFF;
 }
 
@@ -543,13 +572,14 @@ h1, h2, h3, h4 {
 }
 
 .footerLinkItem {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.7rem;
 }
 
 .footerLinkItem a, .footerLinkItem span {
+    font-family: var(--fontParrafos);
     color: #94A3B8;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     transition: color 0.2s ease;
 }
 
