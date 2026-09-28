@@ -1,0 +1,558 @@
+/* =========================================
+   VARIABLES Y PALETA MIP
+========================================= */
+:root {
+    --primaryCoral: #FF5757;
+    --primaryCoralHover: #E04848;
+    --secondaryCyan: #5CE1E6;
+    --secondaryCyanHover: #48CED3;
+    --secondaryMagenta: #D51F47;
+    
+    --darkNeutral: #0F172A;
+    --darkCardBg: #0D131F;
+    --textMuted: #64748B;
+    
+    --lightBackground: #FFFFFF;
+    --heroBgGradient: linear-gradient(180deg, #FFF5F5 0%, #FFFFFF 100%);
+    --cardBgSoft: #F8FAFC;
+    
+    --borderLight: #E2E8F0;
+    --borderInput: #CBD5E1;
+    --shadowSoft: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
+    --shadowHover: 0 20px 35px -10px rgba(0, 0, 0, 0.08), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================================
+   RESET Y ESTILOS GENERALES
+========================================= */
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--lightBackground);
+    color: var(--darkNeutral);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    color: var(--darkNeutral);
+    letter-spacing: -0.03em;
+}
+
+/* Animación de entrada suave */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animateFadeIn {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+/* =========================================
+   1. HEADER / NAVBAR
+========================================= */
+.siteNavbarHeader {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--borderLight);
+    padding: 0.85rem 0;
+}
+
+.brandLogoCircle {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.brandLogoCircle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.brandLogoCircle:hover {
+    transform: scale(1.08) rotate(-5deg);
+}
+
+.brandLogoTitle {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--darkNeutral);
+}
+
+.brandLogoTitle span {
+    color: var(--primaryCoral);
+}
+
+.navLinkItem {
+    font-weight: 600;
+    color: #475569;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.navLinkItem:hover, .navLinkItem.active {
+    color: var(--darkNeutral);
+    font-weight: 700;
+}
+
+/* Botones del Header */
+.headerBtnOutline {
+    border: 1.5px solid #94A3B8;
+    background: transparent;
+    color: var(--darkNeutral);
+    font-weight: 700;
+    padding: 0.45rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.headerBtnOutline:hover {
+    border-color: var(--darkNeutral);
+    background-color: var(--cardBgSoft);
+}
+
+.headerBtnPrimary {
+    background-color: var(--primaryCoral);
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 0.45rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(255, 87, 87, 0.25);
+    transition: all 0.2s ease;
+}
+
+.headerBtnPrimary:hover {
+    background-color: var(--primaryCoralHover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(255, 87, 87, 0.35);
+    color: #FFFFFF;
+}
+
+/* =========================================
+   2. HERO SECTION & BÚSQUEDA
+========================================= */
+.heroSectionContainer {
+    background: var(--heroBgGradient);
+    padding: 4.5rem 0 3.5rem 0;
+}
+
+.communityBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background-color: #D2F8F9;
+    color: #007B80;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.4rem 1.1rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+}
+
+.heroMainTitle {
+    font-size: 3.25rem;
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 1.2rem;
+}
+
+.heroMainTitle .highlightCoral {
+    color: var(--primaryCoral);
+}
+
+.heroSubTitle {
+    font-size: 1.1rem;
+    color: var(--textMuted);
+    max-width: 620px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.6;
+}
+
+/* Caja de Búsqueda */
+.searchBoxCard {
+    background-color: #FFFFFF;
+    border: 1px solid var(--borderLight);
+    border-radius: 50px;
+    padding: 0.5rem 0.6rem 0.5rem 1.2rem;
+    box-shadow: var(--shadowSoft);
+    max-width: 800px;
+    margin: 0 auto;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.searchBoxCard:hover {
+    box-shadow: var(--shadowHover);
+}
+
+/* Inputs con Borde Definido */
+.formInputField {
+    border: 1.5px solid var(--borderInput);
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    padding: 0.65rem 1.2rem;
+    font-size: 0.92rem;
+    font-weight: 500;
+    width: 100%;
+    outline: none;
+    transition: all 0.25s ease;
+    color: var(--darkNeutral);
+}
+
+.formInputField:focus {
+    border-color: var(--secondaryCyan);
+    box-shadow: 0 0 0 4px rgba(92, 225, 230, 0.25);
+}
+
+.formInputField::placeholder {
+    color: #94A3B8;
+}
+
+/* Botón Buscar */
+.searchSubmitButton {
+    background-color: var(--secondaryCyan);
+    color: var(--darkNeutral);
+    font-weight: 800;
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 1.8rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    transition: all 0.2s ease;
+}
+
+.searchSubmitButton:hover {
+    background-color: var(--secondaryCyanHover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(92, 225, 230, 0.4);
+}
+
+/* Búsquedas populares */
+.popularSearchText {
+    font-size: 0.85rem;
+    color: var(--textMuted);
+    margin-top: 1rem;
+}
+
+.popularSearchText a {
+    color: var(--textMuted);
+    text-decoration: underline;
+    font-weight: 600;
+    margin: 0 0.2rem;
+    transition: color 0.2s ease;
+}
+
+.popularSearchText a:hover {
+    color: var(--primaryCoral);
+}
+
+/* =========================================
+   3. BENEFICIOS / FEATURES (TARJETAS)
+========================================= */
+.featureItemCard {
+    background-color: var(--cardBgSoft);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    border-radius: 20px;
+    padding: 2rem 1.75rem;
+    height: 100%;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.featureItemCard:hover {
+    background-color: #FFFFFF;
+    transform: translateY(-6px);
+    box-shadow: var(--shadowHover);
+    border-color: var(--borderLight);
+}
+
+.featureIconBox {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.iconBoxRed {
+    background-color: #FFEBEB;
+    color: var(--primaryCoral);
+}
+
+.iconBoxCyan {
+    background-color: #E6FAFA;
+    color: #008B91;
+}
+
+.featureCardTitle {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 0.6rem;
+}
+
+.featureCardText {
+    font-size: 0.92rem;
+    color: var(--textMuted);
+    line-height: 1.55;
+    margin-bottom: 0;
+}
+
+/* =========================================
+   4. PROFESORES RECOMENDADOS
+========================================= */
+.viewAllCatalogLink {
+    color: var(--primaryCoral);
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.viewAllCatalogLink:hover {
+    color: var(--secondaryMagenta);
+    transform: translateX(3px);
+}
+
+.teacherProfileCard {
+    background-color: #FFFFFF;
+    border: 1px solid var(--borderLight);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: var(--shadowSoft);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.teacherProfileCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadowHover);
+}
+
+.teacherAvatarIcon {
+    width: 52px;
+    height: 52px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.teacher-temp-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.teacherSubjectBadge {
+    display: inline-block;
+    background-color: #E6FAFA;
+    color: #007B80;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    margin-top: 0.2rem;
+}
+
+.teacherSubjectBadge.pink {
+    background-color: #FFEBEB;
+    color: var(--secondaryMagenta);
+}
+
+.teacherBioDescription {
+    font-size: 0.88rem;
+    color: var(--textMuted);
+    line-height: 1.5;
+    margin: 1.2rem 0;
+}
+
+.teacherLocationTag {
+    font-size: 0.82rem;
+    color: var(--textMuted);
+    font-weight: 600;
+}
+
+.teacherContactButton {
+    background-color: var(--primaryCoral);
+    color: #FFFFFF;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    padding: 0.45rem 1.1rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.teacherContactButton:hover {
+    background-color: var(--primaryCoralHover);
+    color: #FFFFFF;
+    box-shadow: 0 4px 10px rgba(255, 87, 87, 0.3);
+}
+
+/* =========================================
+   5. CTA DOBLE
+========================================= */
+.roleActionCardCoral {
+    background: linear-gradient(135deg, #FF5757 0%, #E04848 100%);
+    color: #FFFFFF;
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 15px 30px rgba(255, 87, 87, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.roleActionCardDark {
+    background-color: var(--darkCardBg);
+    color: #FFFFFF;
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 15px 30px rgba(13, 19, 31, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.roleActionCardCoral:hover, .roleActionCardDark:hover {
+    transform: translateY(-4px);
+}
+
+.roleActionTitle {
+    font-size: 1.75rem;
+    font-weight: 900;
+    margin-bottom: 0.8rem;
+    color: #FFFFFF;
+}
+
+.roleActionTitle.cyan {
+    color: var(--secondaryCyan);
+}
+
+.roleActionText {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+.roleActionButtonWhite {
+    background-color: #FFFFFF;
+    color: var(--primaryCoral);
+    font-weight: 800;
+    border: none;
+    border-radius: 50px;
+    padding: 0.7rem 1.6rem;
+    text-decoration: none;
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.92rem;
+    transition: all 0.2s ease;
+}
+
+.roleActionButtonWhite:hover {
+    background-color: #F8FAFC;
+    color: var(--primaryCoralHover);
+    transform: scale(1.03);
+}
+
+.roleActionButtonCyan {
+    background-color: var(--secondaryCyan);
+    color: var(--darkNeutral);
+    font-weight: 800;
+    border: none;
+    border-radius: 50px;
+    padding: 0.7rem 1.6rem;
+    text-decoration: none;
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 0.92rem;
+    transition: all 0.2s ease;
+}
+
+.roleActionButtonCyan:hover {
+    background-color: var(--secondaryCyanHover);
+    transform: scale(1.03);
+}
+
+/* =========================================
+   6. FOOTER
+========================================= */
+.mainSiteFooter {
+    background-color: var(--darkNeutral);
+    color: #FFFFFF;
+    padding: 4rem 0 2rem 0;
+    margin-top: 4rem;
+}
+
+.footerColumnTitle {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    color: #FFFFFF;
+}
+
+.footerLinkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footerLinkItem {
+    margin-bottom: 0.6rem;
+}
+
+.footerLinkItem a, .footerLinkItem span {
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footerLinkItem a:hover {
+    color: var(--secondaryCyan);
+}
